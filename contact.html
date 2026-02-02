@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NAD Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo2.png" alt="NAD Education" class="logo-image logo-light">
+                <img src="logo3.png" alt="NAD Education" class="logo-image logo-dark">
+            </a>
+            <div class="nav-tagline">
+                <span>Your Success, Our Mission</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Expression of Interest</h1>
+            <p>Register your interest in our classes or enquire about tutoring</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Express Your Interest</h2>
+                    <p class="form-intro">Fill out the form below and we'll be in touch to discuss availability and next steps.</p>
+                    <form id="contactForm" class="contact-form" name="expression-of-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+                        <!-- Hidden fields for Netlify -->
+                        <input type="hidden" name="form-name" value="expression-of-interest" />
+                        <p style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="parent-name">Parent/Guardian Name *</label>
+                                <input type="text" id="parent-name" name="parent-name" required placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="student-name">Student Name *</label>
+                                <input type="text" id="student-name" name="student-name" required placeholder="Enter student's full name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="04XX XXX XXX">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Class/Year Level *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select your class</option>
+                                <optgroup label="VCE Mathematics">
+                                    <option value="methods-12">Mathematical Methods Units 1/2</option>
+                                    <option value="methods-34">Mathematical Methods Units 3/4</option>
+                                    <option value="general-12">General Mathematics Units 1/2</option>
+                                    <option value="general-34">General Mathematics Units 3/4</option>
+                                    <option value="specialist-12">Specialist Mathematics Units 1/2</option>
+                                    <option value="specialist-34">Specialist Mathematics Units 3/4</option>
+                                </optgroup>
+                                <optgroup label="Junior Years">
+                                    <option value="year4">Year 4 Mathematics</option>
+                                    <option value="year5">Year 5 Mathematics</option>
+                                    <option value="year6">Year 6 Mathematics</option>
+                                    <option value="year7">Year 7 Mathematics</option>
+                                    <option value="year8">Year 8 Mathematics</option>
+                                    <option value="year9">Year 9 Mathematics</option>
+                                    <option value="year10">Year 10 Mathematics</option>
+                                </optgroup>
+                                <optgroup label="Other">
+                                    <option value="general">General Enquiry</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="program-type">Preferred Format *</label>
+                            <select id="program-type" name="program-type" required>
+                                <option value="">Select format</option>
+                                <option value="in-person">In-Person (Group Classes)</option>
+                                <option value="online">Online (Group Classes)</option>
+                                <option value="flexible">Flexible - Either Option</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="class-schedule">📅 Scheduled Class Time</label>
+                            <input type="text" id="class-schedule" name="class-schedule" readonly placeholder="Select a class above to see scheduled time">
+                            <small style="color: var(--text-light); font-size: 0.875rem; display: block; margin-top: 0.5rem;">
+                                Each class has a fixed weekly time slot. The schedule will automatically populate based on your subject selection above.
+                            </small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about any specific learning goals, areas of difficulty, or questions you have..."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" id="newsletter">
+                                <span>Keep me updated about class schedules and special programs</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">Submit Expression of Interest</button>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="contact-info-container">
+                    <div class="contact-info-card">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div class="info-content">
+                                <h4>Phone</h4>
+                                <p>0450 531 445</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">✉️</div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p>nagasinghehw@gmail.com</p>
+                                <p class="info-note">We respond within 48 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">🏫</div>
+                            <div class="info-content">
+                                <h4>Location</h4>
+                                <p>Kalorama Street, Greenvale</p>
+                                <p class="info-note">In-person and online sessions available</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="contact-info-card quick-contact">
+                        <h3>Have Questions?</h3>
+                        <p>Check out our <a href="timetable.html" style="color: #2563eb; text-decoration: underline;">class timetable</a> or give us a call during office hours.</p>
+                        <a href="timetable.html" class="btn btn-secondary">View Timetable</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How do I secure my spot?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Submit an expression of interest through our contact form. Following an initial consultation, we will confirm your spot.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Do you offer online tutoring?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes! We offer both in-person and online tutoring sessions via video conferencing with interactive whiteboards.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Can I join mid-term?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes! We accept new students throughout the term. We'll provide catch-up materials for any missed content.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What if we need to cancel a session?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We require 24 hours notice for cancellations. Sessions cancelled with less notice may be charged.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Is there a minimum commitment?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>No! You can book individual sessions, though package deals offer better value for regular tutoring.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Do you guarantee results?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>While we can't guarantee specific grades, 95% of our students see measurable improvement within the first 8 weeks.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How quickly can we start?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Most students can begin within 3-5 days of their initial consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NAD Education</h3>
+                    <p>Empowering students to achieve their mathematical goals through personalised, expert tutoring.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Services</a></li>
+                        <li><a href="timetable.html">Timetable</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📞 0450 531 445</li>
+                        <li>✉️ nagasinghehw@gmail.com</li>
+                        <li>🏫 Kalorama Street, Greenvale</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NAD Education. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
